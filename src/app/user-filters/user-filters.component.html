@@ -1,0 +1,27 @@
+<div class="filters">
+    <h2>Filters</h2>
+  
+    <!-- Domain Filter -->
+    <select [(ngModel)]="selectedDomain" (change)="applyFilters()">
+      <option value="">All Domains</option>
+      <option *ngFor="let domain of uniqueDomains" [value]="domain">{{ domain }}</option>
+    </select>
+  
+    <!-- Gender Filter -->
+    <select [(ngModel)]="selectedGender" (change)="applyFilters()">
+      <option value="">All Genders</option>
+      <option value="Male">Male</option>
+      <option value="Female">Female</option>
+      <option value="Agender">Agender</option>
+    </select>
+  
+    <!-- Availability Filter -->
+    <select [(ngModel)]="selectedAvailability" (change)="applyFilters()">
+      <option value="">All Availability</option>
+      <option value="true">Available</option>
+      <option value="false">Not Available</option>
+    </select>
+  
+    <!-- Apply Filters Button -->
+    <button (click)="applyAllFilters()">Apply Filters</button>
+  </div>
